@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumir API</title>
+    <!-- CDN Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-brand m-auto h1 text-white text-center p4">Consumir API de JAVA con AJAX y JQuery</span>
+    </nav>
+    
+    <!-- Mensajes -->
+    <div id="messages" class="alert alert-success text-center" style="font-size: 20px; display:none"></div>
+
+    <!-- Alumno Details-->
+    <div class="row justify-content-center">
+        <div id="alumno-details" class="text-center mt-5 p-2 col-md-4"></div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8 mt-5">
+                <table class="table table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Apellido</th>
+                            <th>Curso</th>
+                            <th>Nota</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4 ml-auto" style="margin-top: 50px;">
+                <div class="ml-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-italic" id="apellido" placeholder="apellido">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-italic" id="curso" placeholder="curso">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-italic" id="nota" placeholder="nota">
+                    </div>
+
+                    <input type="hidden" id="id">
+
+                    <button class="btn btn-success btn-block" id="agregar">Agregar Alumno</button>
+                    <button class="btn btn-success btn-block" id="editar" style="display: none">Editar Alumno</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CDN Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
