@@ -3,7 +3,7 @@ $(document).ready(() => {
     // Listado de alumnos
     const list = () => {
         $.ajax({
-            url: 'https://api-alumnos.herokuapp.com/api/list',
+            url: 'http://localhost:8080/api/list',
             type: 'GET',
             dataType: 'json',
             success: function(response) {
@@ -44,7 +44,7 @@ $(document).ready(() => {
             }
 
             $.ajax({
-                url: 'https://api-alumnos.herokuapp.com/api/save',
+                url: 'http://localhost:8080/api/save',
                 contentType: 'application/json',
                 type: 'POST',
                 data: JSON.stringify(datosAlumno),
@@ -66,7 +66,7 @@ $(document).ready(() => {
             let id = $(btnDetails).attr('alumnoId');
             
             $.ajax({
-                url: 'https://api-alumnos.herokuapp.com/api/alumno/'+id,
+                url: 'http://localhost:8080/api/alumno/'+id,
                 type: 'GET',
                 dataType: 'json',
                 success: (res) => {
@@ -94,7 +94,7 @@ $(document).ready(() => {
                 let id = $(btnDelete).attr('alumnoId');
     
                 $.ajax({
-                    url: 'https://api-alumnos.herokuapp.com/api/delete/'+id,
+                    url: 'http://localhost:8080/api/delete/'+id,
                     type: 'DELETE',
                     dataType: 'json',
                     success: (res) => {
@@ -117,7 +117,7 @@ $(document).ready(() => {
             $('#editar').show();
 
             $.ajax({
-                url: 'https://api-alumnos.herokuapp.com/api/alumno/' +id,
+                url: 'http://localhost:8080/api/alumno/' +id,
                 type: 'GET',
                 dataType: 'json',
                 success: (res) => {
@@ -145,7 +145,7 @@ $(document).ready(() => {
             }
 
             $.ajax({ 
-                url: 'https://api-alumnos.herokuapp.com/api/update/'+id,
+                url: 'http://localhost:8080/api/update/'+id,
                 contentType: 'application/json',
                 type: 'PUT',
                 data: JSON.stringify(datosAlumno),
