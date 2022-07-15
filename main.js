@@ -3,7 +3,7 @@ $(document).ready(() => {
     // Listado de alumnos
     const list = () => {
         $.ajax({
-            url: 'http://localhost:8080/api/list',
+            url: 'https://api-alumnos.herokuapp.com/api/list',
             type: 'GET',
             dataType: 'json',
             success: function(response) {
@@ -44,7 +44,7 @@ $(document).ready(() => {
             }
 
             $.ajax({
-                url: 'http://localhost:8080/api/save',
+                url: 'https://api-alumnos.herokuapp.com/api/save',
                 contentType: 'application/json',
                 type: 'POST',
                 data: JSON.stringify(datosAlumno),
@@ -66,7 +66,7 @@ $(document).ready(() => {
             let id = $(btnDetails).attr('alumnoId');
             
             $.ajax({
-                url: 'http://localhost:8080/api/alumno/'+id,
+                url: 'https://api-alumnos.herokuapp.com/api/alumno/'+id,
                 type: 'GET',
                 dataType: 'json',
                 success: (res) => {
@@ -94,7 +94,7 @@ $(document).ready(() => {
                 let id = $(btnDelete).attr('alumnoId');
     
                 $.ajax({
-                    url: 'http://localhost:8080/api/delete/'+id,
+                    url: 'https://api-alumnos.herokuapp.com/api/delete/'+id,
                     type: 'DELETE',
                     dataType: 'json',
                     success: (res) => {
@@ -117,7 +117,7 @@ $(document).ready(() => {
             $('#editar').show();
 
             $.ajax({
-                url: 'http://localhost:8080/api/alumno/' +id,
+                url: 'https://api-alumnos.herokuapp.com/api/alumno/' +id,
                 type: 'GET',
                 dataType: 'json',
                 success: (res) => {
@@ -137,7 +137,6 @@ $(document).ready(() => {
             //console.log(id);
             $('#agregar').css('display', 'none');
             $('#editar').css('display', 'block');
-
             const datosAlumno = {
                 apellido: $('#apellido').val(),
                 curso: $('#curso').val(),
@@ -145,7 +144,7 @@ $(document).ready(() => {
             }
 
             $.ajax({ 
-                url: 'http://localhost:8080/api/update/'+id,
+                url: 'https://api-alumnos.herokuapp.com/api/update/'+id,
                 contentType: 'application/json',
                 type: 'PUT',
                 data: JSON.stringify(datosAlumno),
